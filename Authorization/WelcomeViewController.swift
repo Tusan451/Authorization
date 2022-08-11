@@ -32,16 +32,21 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
             performSegue(withIdentifier: "successSegue", sender: nil)
         } else {
             showAlert(title: "Пароль не верный", message: "Если вы забыли пароль, нажмите \"Forgot Password\"")
+            
             passwordTextFieldView.layer.borderWidth = 2
             passwordTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
+            passwordTextField.text = ""
         }
     }
     
     @IBAction func actionForgotPassword() {
-        showAlert(title: "Ваш новый пароль", message: "12345")
+        showAlert(title: "Ваш новый пароль", message: "\(legalPassword)")
     }
     
-    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {}
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
+        nameTextField.text = ""
+        passwordTextField.text = ""
+    }
     
     // Базовая настройка UI для элементов интерфейса
     private func uiSettings() {
@@ -56,9 +61,14 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
-    // Скрытие клавиатуры по нажатию на Return
+    // Переключение полей ввода текста по нажатию на Return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if textField == nameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
         return true
     }
     
