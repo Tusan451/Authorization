@@ -11,11 +11,13 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    
     @IBOutlet var nameTextFieldView: UIView!
     @IBOutlet var passwordTextFieldView: UIView!
-    
     @IBOutlet var startButton: UIButton!
+    
+    private let legalPassword = "12345Hola!"
+    private var login = ""
+    private var password = ""
     
     
     override func viewDidLoad() {
@@ -23,7 +25,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         
         uiSettings()
         textFieldsDelegate()
-        
     }
     
     @IBAction func actionButton() {
@@ -61,6 +62,20 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    // Сохранение введенных данных
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        
+        switch textField.tag {
+        case 0:
+            login = text
+        case 1:
+            password = text
+        default:
+            break
+        }
     }
 }
 
