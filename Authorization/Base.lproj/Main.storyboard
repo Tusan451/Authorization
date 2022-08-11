@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Y1E-I9-NwZ">
-                                <rect key="frame" x="20" y="157" width="335" height="353"/>
+                                <rect key="frame" x="20" y="171.5" width="335" height="324"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfY-0o-bC7">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="67"/>
@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fn5-0c-HS4">
-                                        <rect key="frame" x="0.0" y="97" width="335" height="256"/>
+                                        <rect key="frame" x="0.0" y="97" width="335" height="227"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A8G-Jd-7JT">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="182"/>
@@ -93,18 +93,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l34-ud-efm">
-                                                <rect key="frame" x="0.0" y="198" width="335" height="58"/>
+                                                <rect key="frame" x="0.0" y="198" width="335" height="29"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soU-ro-kM8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Forgot name?">
-                                                            <color key="titleColor" systemColor="systemGrayColor"/>
-                                                        </state>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOj-J0-EXk">
-                                                        <rect key="frame" x="0.0" y="29" width="335" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Forgot password?">

@@ -23,6 +23,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         
         uiSettings()
         textFieldsDelegate()
+        
     }
     
     @IBAction func actionButton() {
@@ -33,6 +34,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         nameTextFieldView.layer.cornerRadius = 6
         passwordTextFieldView.layer.cornerRadius = 6
         startButton.layer.cornerRadius = 6
+        startButton.backgroundColor = UIColor.systemBlue
     }
     
     // Делаем View Controller делегатом протокола UITextFieldDelegate
@@ -51,6 +53,14 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+    
+    // Предупреждение
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
