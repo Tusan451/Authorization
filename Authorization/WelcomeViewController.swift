@@ -28,14 +28,20 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func actionButton() {
-        if password == legalPassword {
+        if password == legalPassword && login.count > 1 {
             performSegue(withIdentifier: "successSegue", sender: nil)
-        } else {
-            showAlert(title: "Пароль не верный", message: "Если вы забыли пароль, нажмите \"Forgot Password\"")
+        } else if password != legalPassword {
+            showAlert(title: "Не верный пароль", message: "Если вы забыли пароль, нажмите \"Forgot Password\"")
             
             passwordTextFieldView.layer.borderWidth = 2
             passwordTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
             passwordTextField.text = ""
+        } else if login.count < 2 {
+            showAlert(title: "Неправильное имя пользователя", message: "Имя пользователя должно содержать хотя бы 2 символа")
+            
+            nameTextFieldView.layer.borderWidth = 2
+            nameTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
+            nameTextField.text = ""
         }
     }
     
