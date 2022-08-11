@@ -28,6 +28,13 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func actionButton() {
+        if password == legalPassword {
+            performSegue(withIdentifier: "successSegue", sender: nil)
+        } else {
+            showAlert(title: "Пароль не верный", message: "Если вы забыли пароль, нажмите \"Forgot Password\"")
+            passwordTextFieldView.layer.borderWidth = 2
+            passwordTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
+        }
     }
     
     // Базовая настройка UI для элементов интерфейса

@@ -99,7 +99,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Forgot password?">
+                                                        <state key="normal" title="Forgot Password?">
                                                             <color key="titleColor" systemColor="systemGrayColor"/>
                                                         </state>
                                                     </button>
@@ -129,7 +129,7 @@
                         <outlet property="passwordTextField" destination="P97-6b-6IW" id="965-Oq-lu1"/>
                         <outlet property="passwordTextFieldView" destination="Sac-iT-Kzz" id="Pi3-ch-o1d"/>
                         <outlet property="startButton" destination="FaL-xU-ZeE" id="DWt-QN-jBR"/>
-                        <segue destination="43d-u0-DGm" kind="presentation" modalPresentationStyle="fullScreen" id="5zr-d7-Lky"/>
+                        <segue destination="43d-u0-DGm" kind="presentation" identifier="successSegue" modalPresentationStyle="fullScreen" id="5zr-d7-Lky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -168,12 +168,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDw-Ua-7hK">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="x60-cv-rzY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Exit"/>
                             </button>
@@ -204,6 +204,9 @@
     <resources>
         <image name="Uber_logo_2018 1" width="927" height="322"/>
         <image name="Снимок экрана 2022-08-10 в 18.07 1-2" width="2480" height="1392"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
