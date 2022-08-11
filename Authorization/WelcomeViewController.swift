@@ -7,10 +7,14 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     @IBOutlet var nameTextFieldView: UIView!
     @IBOutlet var passwordTextFieldView: UIView!
+    
     @IBOutlet var startButton: UIButton!
     
     
@@ -18,6 +22,10 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         uiSettings()
+        textFieldsDelegate()
+    }
+    
+    @IBAction func actionButton() {
     }
     
     // Базовая настройка UI для элементов интерфейса
@@ -26,9 +34,23 @@ class WelcomeViewController: UIViewController {
         passwordTextFieldView.layer.cornerRadius = 6
         startButton.layer.cornerRadius = 6
     }
-
-    @IBAction func pressedStartButton(_ sender: Any) {
+    
+    // Делаем View Controller делегатом протокола UITextFieldDelegate
+    private func textFieldsDelegate() {
+        nameTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
+    // Скрытие клавиатуры по нажатию на Return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Скрытие клавиатуры по тапу на экране
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
 
