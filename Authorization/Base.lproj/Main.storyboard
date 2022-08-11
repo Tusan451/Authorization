@@ -102,6 +102,9 @@
                                                         <state key="normal" title="Forgot Password?">
                                                             <color key="titleColor" systemColor="systemGrayColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="actionForgotPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJx-O6-z9G"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -129,7 +132,7 @@
                         <outlet property="passwordTextField" destination="P97-6b-6IW" id="965-Oq-lu1"/>
                         <outlet property="passwordTextFieldView" destination="Sac-iT-Kzz" id="Pi3-ch-o1d"/>
                         <outlet property="startButton" destination="FaL-xU-ZeE" id="DWt-QN-jBR"/>
-                        <segue destination="43d-u0-DGm" kind="presentation" identifier="successSegue" modalPresentationStyle="fullScreen" id="5zr-d7-Lky"/>
+                        <segue destination="43d-u0-DGm" kind="presentation" identifier="successSegue" modalPresentationStyle="fullScreen" id="Zia-9G-a2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,12 +142,12 @@
         <!--Profile View Controller-->
         <scene sceneID="piF-sk-ZXh">
             <objects>
-                <viewController id="43d-u0-DGm" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController id="43d-u0-DGm" customClass="ProfileViewController" customModule="Authorization" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0rk-mN-pgc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice to meet you!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxq-Bn-Mkb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice to meet you!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxq-Bn-Mkb" userLabel="hello Text">
                                 <rect key="frame" x="20" y="149" width="335" height="100.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,6 +179,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Exit"/>
+                                <connections>
+                                    <segue destination="yIC-1S-Hsz" kind="unwind" unwindAction="unwindSegue:" id="HOz-Th-ZmO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CpW-h1-CrR"/>
@@ -195,8 +201,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dva-z0-Kq3"/>
+                    <connections>
+                        <outlet property="helloText" destination="Gxq-Bn-Mkb" id="NMU-l6-VQO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6W-YZ-lIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yIC-1S-Hsz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="932" y="82.3088455772114"/>
         </scene>

@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextFieldView: UIView!
     @IBOutlet var startButton: UIButton!
     
-    private let legalPassword = "12345Hola!"
+    private let legalPassword = "12345"
     private var login = ""
     private var password = ""
     
@@ -37,12 +37,17 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func actionForgotPassword() {
+        showAlert(title: "Ваш новый пароль", message: "12345")
+    }
+    
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {}
+    
     // Базовая настройка UI для элементов интерфейса
     private func uiSettings() {
         nameTextFieldView.layer.cornerRadius = 6
         passwordTextFieldView.layer.cornerRadius = 6
         startButton.layer.cornerRadius = 6
-        startButton.backgroundColor = UIColor.systemBlue
     }
     
     // Делаем View Controller делегатом протокола UITextFieldDelegate
@@ -100,6 +105,11 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
             break
         }
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let profileVC = segue.destination as? ProfileViewController else { return }
+        profileVC.userName = login
     }
 }
 
