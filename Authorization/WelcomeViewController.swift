@@ -71,11 +71,28 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         switch textField.tag {
         case 0:
             login = text
+            nameTextFieldView.layer.borderWidth = 0
         case 1:
             password = text
+            passwordTextFieldView.layer.borderWidth = 0
         default:
             break
         }
+    }
+    
+    // Активное состояние Text Field
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 0:
+            nameTextFieldView.layer.borderWidth = 2
+            nameTextFieldView.layer.borderColor = UIColor.systemBlue.cgColor
+        case 1:
+            passwordTextFieldView.layer.borderWidth = 2
+            passwordTextFieldView.layer.borderColor = UIColor.systemBlue.cgColor
+        default:
+            break
+        }
+        return true
     }
 }
 
