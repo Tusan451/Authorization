@@ -30,18 +30,20 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func actionButton() {
         if password == legalPassword && login.count > 1 {
             performSegue(withIdentifier: "successSegue", sender: nil)
-        } else if password != legalPassword {
+        } else if password != legalPassword && login != "" {
             showAlert(title: "Не верный пароль", message: "Если вы забыли пароль, нажмите \"Forgot Password\"")
             
             passwordTextFieldView.layer.borderWidth = 2
             passwordTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
             passwordTextField.text = ""
-        } else if login.count < 2 {
+        } else if login.count < 2 && password != "" {
             showAlert(title: "Неправильное имя пользователя", message: "Имя пользователя должно содержать хотя бы 2 символа")
             
             nameTextFieldView.layer.borderWidth = 2
             nameTextFieldView.layer.borderColor = UIColor.systemRed.cgColor
             nameTextField.text = ""
+        } else if password == "" && login == "" {
+            showAlert(title: "Введите имя пользователя и пароль", message: "")
         }
     }
     
@@ -52,6 +54,8 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
         nameTextField.text = ""
         passwordTextField.text = ""
+        login = ""
+        password = ""
     }
     
     // Базовая настройка UI для элементов интерфейса

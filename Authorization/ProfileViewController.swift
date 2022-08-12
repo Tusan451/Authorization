@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet var exitButton: UIButton!
     @IBOutlet var helloText: UILabel!
     
     var userName = String()
@@ -17,5 +18,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         helloText.text = "Nice to meet you, \(userName)!"
+        exitButton.layer.cornerRadius = 6
     }
 }

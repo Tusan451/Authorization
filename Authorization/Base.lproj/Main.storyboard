@@ -202,6 +202,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dva-z0-Kq3"/>
                     <connections>
+                        <outlet property="exitButton" destination="eDw-Ua-7hK" id="ZKA-Tn-tBz"/>
                         <outlet property="helloText" destination="Gxq-Bn-Mkb" id="NMU-l6-VQO"/>
                     </connections>
                 </viewController>
